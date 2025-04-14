@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import ChatContainer from './ChatContainer.jsx';
 import ChatInput from './ChatInput.jsx';
-import { loadMessages, saveMessages } from './utils';
+import { loadMessages, saveMessages } from './utils.js';
 
 const ChatApp = () => {
   const [messages, setMessages] = useState(loadMessages);

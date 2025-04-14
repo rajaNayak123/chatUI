@@ -1,5 +1,5 @@
 import React from 'react';
-import { formatTimestamp } from './utils';
+import { formatTimestamp } from './utils.js';
 
 const ChatMessage = ({ message }) => {
   const isUser = message.sender === 'user';
