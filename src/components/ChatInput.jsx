@@ -1,19 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
 
 const ChatInput = ({ onSend }) => {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const inputRef = useRef();
   const fileInputRef = useRef();
 
   const handleSend = () => {
     if (!input.trim()) return;
     onSend(input.trim());
-    setInput('');
+    setInput("");
     inputRef.current.focus();
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') handleSend();
+    if (e.key === "Enter") handleSend();
   };
 
   const handleFileChange = async (e) => {
@@ -22,13 +22,13 @@ const ChatInput = ({ onSend }) => {
 
     const reader = new FileReader();
     reader.onloadend = () => {
-      const isImage = file.type.startsWith('image/');
+      const isImage = file.type.startsWith("image/");
       const fileData = {
         url: reader.result,
         name: file.name,
-        type: isImage ? 'image' : 'file',
+        type: isImage ? "image" : "file",
       };
-      onSend('', 'user', fileData);
+      onSend("", "user", fileData);
     };
     reader.readAsDataURL(file);
   };
@@ -54,7 +54,7 @@ const ChatInput = ({ onSend }) => {
       />
       <button
         onClick={() => fileInputRef.current.click()}
-        className="text-gray-500 hover:text-gray-700 cursor-pointer"
+        className="text-gray-500 mr-2 ml-2 hover:text-gray-700 cursor-pointer"
         title="Attach file"
         aria-label="Attach file"
       >
@@ -62,10 +62,14 @@ const ChatInput = ({ onSend }) => {
       </button>
       <button
         onClick={handleSend}
-        className="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 cursor-pointer transition focus:outline-none"
-        aria-label="Send message"
+        className="w-[50px] h-[50px] cursor-pointer bg-[#2389e9] text-white p-2 flex items-center justify-center border-none transition-all duration-500 ease-in-out hover:rounded-full group"
       >
-        Send
+        <span
+          className="w-[50px] h-[50px] bg-no-repeat bg-center bg-cover transition-all duration-[900ms] ease-in-out group-hover:rotate-[24deg]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzUycHQiIGhlaWdodD0iNzUycHQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDc1MiA3NTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiA8cGF0aCBkPSJtNTczLjE4IDE5OC42MnYwbC0zOTYuMDkgNjMuNzE5Yy03Ljc1IDAuODU5MzgtOS40NzI3IDExLjE5NS0zLjQ0NTMgMTUuNWw5Ny4zMDEgNjguODgzLTE1LjUgMTEyLjhjLTAuODU5MzggNy43NSA3Ljc1IDEyLjkxNCAxMy43NzcgNy43NWw1NS4xMDktNDQuNzczIDI2LjY5MSAxMjQuODVjMS43MjI3IDcuNzUgMTEuMTk1IDkuNDcyNyAxNS41IDIuNTgybDIxNS4yNy0zMzguMzljMy40NDE0LTYuMDI3My0xLjcyNjYtMTMuNzc3LTguNjEzMy0xMi45MTR6bS0zNzIuODQgNzYuNjMzIDMxMy40Mi00OS45NDEtMjMzLjM0IDEwNy42M3ptNzQuMDUxIDE2NS4zMiAxMi45MTQtOTIuMTMzYzgwLjkzOC0zNy4wMjcgMTM5LjQ5LTY0LjU3OCAyMjkuMDQtMTA1LjkxLTEuNzE4OCAxLjcyMjctMC44NTkzNyAwLjg1OTM4LTI0MS45NSAxOTguMDR6bTg4LjY4OCA4Mi42Ni0yNC4xMDktMTEyLjggMTk5Ljc3LTE2Mi43NHoiIGZpbGw9IiNmZmYiLz4KPC9zdmc+Cg==")`,
+          }}
+        ></span>
       </button>
     </div>
   );
