@@ -1,12 +1,103 @@
-# React + Vite
+# 💬 React Chat UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modular, responsive chat UI built with **React.js** and **Tailwind CSS**. It supports:
 
-Currently, two official plugins are available:
+- 💾 Message persistence with `localStorage`
+- 🧾 Text & file messaging (images, documents, etc.)
+- 🕒 Timestamps using `Day.js`
+- 📱 Fully responsive design
+- 📦 Modular & reusable components
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✅ **Send & receive messages**
+- 📂 **File & image support**
+- 🕓 **Timestamps using Day.js**
+- 🌗 **Responsive design** (mobile + desktop)
+- ♻️ **Reusable components**
+- 💾 **localStorage-based history**
+
+---
+
+## 📸 Demo
+
+![Chat UI Demo](https://via.placeholder.com/800x400.png?text=Chat+UI+Demo)  
+> Demo preview of text, file, and image messages
+
+---
+
+## ⚙️ Setup
+
+### 1. Clone the project
+
+```bash
+  git clone https://github.com/your-username/react-chat-ui.git
+  cd react-chat-ui
+```
+
+### 2. Install dependencies
+
+```bash 
+npm install
+```
+
+3. Start the app
+
+```bash
+npm run dev
+```
+ NOTE:  Make sure you're using Node.js 16+
+
+
+
+
+ ## 📦 Dependencies
+
+    React.js
+
+    Tailwind CSS
+
+    Day.js (for timestamp formatting)
+
+Install Day.js manually if needed:
+
+```bash
+npm install dayjs
+```
+
+ ## 📋 Example Usage
+
+Send a message:
+
+```bash
+{
+  text: "Hello!",
+  sender: "user",
+  timestamp: 1713009353289
+}
+```
+
+Send an image/file:
+
+```bash 
+{
+  text: "",
+  sender: "user",
+  timestamp: 1713009353289,
+  file: {
+    type: "image", // or "file"
+    url: "blob:http://...",
+    name: "image.png"
+  }
+}
+```
+
+## 🧑‍💻 Author
+
+Made with ❤️ by Raja Nayak
+  
+  Want to integrate this into a bigger app like a customer support system, team chat, or AI chatbot? I'm happy to help.
+
+
