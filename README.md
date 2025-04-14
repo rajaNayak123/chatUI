@@ -22,8 +22,11 @@ A modular, responsive chat UI built with **React.js** and **Tailwind CSS**. It s
 ---
 
 ## 📸 Demo
-
 ![Chat UI Demo](https://chat-ui-delta-bay.vercel.app/)  
+<hr>
+<img width="894" alt="Screenshot 2025-04-14 at 10 14 35 AM" src="https://github.com/user-attachments/assets/5b04f04a-fa45-4a92-9cd2-823ec1de33c5" />
+<img width="894" alt="Screenshot 2025-04-14 at 10 15 19 AM" src="https://github.com/user-attachments/assets/855677d2-10f9-4378-b333-5c847e28907d" />
+
 > Demo preview of text, file, and image messages
 
 ---
